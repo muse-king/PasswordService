@@ -34,7 +34,7 @@ public partial class MainWindow : Window
         SourceInitialized += (_, _) => UnlockWindow.ApplyDarkTitleBar(this);
         Loaded += (_, _) =>
         {
-            VaultPathText.Text = _vaultPath;
+            VaultPathText.ToolTip = _vaultPath;
             NameInput.Focus();
         };
     }
@@ -228,7 +228,8 @@ public partial class MainWindow : Window
         var query = SearchInput.Text.Trim();
         if (!showAll && query != "*" && string.IsNullOrEmpty(query))
         {
-            SearchStatusText.Text = "请输入名称";
+            SearchStatusText.Text = "";
+            SearchStatusText.Visibility = Visibility.Collapsed;
             return;
         }
 
@@ -242,6 +243,7 @@ public partial class MainWindow : Window
             }
         }
 
+        SearchStatusText.Visibility = Visibility.Visible;
         SearchStatusText.Text = _currentMatches.Count == 0
             ? "未找到匹配的密码"
             : $"共 {_currentMatches.Count} 条，请选择右侧结果";
@@ -407,7 +409,7 @@ public partial class MainWindow : Window
                 return migrated;
             });
             _vaultPath = newPath;
-            VaultPathText.Text = _vaultPath;
+            VaultPathText.ToolTip = _vaultPath;
             SetFooterStatus("● 密码库已迁移到新位置，旧副本仍保留", "SuccessBrush");
         }
         catch (Exception ex)

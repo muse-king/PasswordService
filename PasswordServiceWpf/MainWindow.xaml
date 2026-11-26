@@ -55,8 +55,8 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="PwdPlainInput" Background="Transparent" BorderThickness="0" Foreground="{StaticResource TextBrush}" CaretBrush="{StaticResource TextBrush}" FontSize="13" Visibility="Collapsed" TextChanged="PwdPlainInput_TextChanged"/>
                                 <PasswordBox x:Name="PwdMaskedInput" Background="Transparent" BorderThickness="0" Foreground="{StaticResource TextBrush}" CaretBrush="{StaticResource TextBrush}" FontSize="13" PasswordChanged="PwdMaskedInput_PasswordChanged"/>
-                                <Button x:Name="TogglePwdBtn" Grid.Column="1" Content="○" Background="Transparent" Foreground="{StaticResource MutedBrush}" BorderThickness="0" Cursor="Hand" Padding="6,0" Click="TogglePwd_Click" ToolTip="显示/隐藏密码"/>
-                                <Button Grid.Column="2" Content="复制" Background="Transparent" Foreground="{StaticResource BlueBrush}" BorderThickness="0" Cursor="Hand" Padding="6,0" Click="CopyPwd_Click"/>
+                                <Button x:Name="TogglePwdBtn" Grid.Column="1" Content="○" Style="{StaticResource InlineIconButton}" Margin="4,0,2,0" Click="TogglePwd_Click" ToolTip="显示/隐藏密码"/>
+                                <Button Grid.Column="2" Content="复制" Style="{StaticResource InlineIconButton}" Foreground="{StaticResource BlueBrush}" Click="CopyPwd_Click"/>
                             </Grid>
                         </Border>
 
@@ -96,12 +96,12 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Margin="0,0,0,8">
-                            <TextBlock Text="加密密码库位置" Foreground="{StaticResource MutedBrush}" FontSize="11"/>
-                            <TextBlock x:Name="VaultPathText" Foreground="{StaticResource TextBrush}" FontSize="12" TextTrimming="CharacterEllipsis" Margin="0,2,0,0"/>
+                            <TextBlock Text="加密密码库" Foreground="{StaticResource MutedBrush}" FontSize="11"/>
+                            <TextBlock x:Name="VaultPathText" Text="已加密连接 · passwords.enc" Foreground="{StaticResource TextBrush}" FontSize="12" Margin="0,2,0,0"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
                             <Button Content="更改位置" Style="{StaticResource SecondaryButton}" Padding="10,5" FontSize="12" Margin="0,0,8,0" Click="ChangeLocation_Click"/>
-                            <Button Content="打开文件夹" Style="{StaticResource SecondaryButton}" Padding="10,5" FontSize="12" Click="OpenFolder_Click"/>
+                            <Button Content="打开目录" Style="{StaticResource SecondaryButton}" Padding="10,5" FontSize="12" Click="OpenFolder_Click"/>
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -139,7 +139,7 @@
                     <!-- 选中结果详情 -->
                     <Border Grid.Row="4" Background="{StaticResource EntryBgBrush}" BorderBrush="{StaticResource BorderBrush}" BorderThickness="1" CornerRadius="8" Padding="12" MinHeight="112">
                         <StackPanel>
-                            <TextBlock x:Name="SearchStatusText" Text="请输入名称" Foreground="{StaticResource MutedBrush}" FontSize="12" Margin="0,0,0,6"/>
+                            <TextBlock x:Name="SearchStatusText" Text="" Foreground="{StaticResource MutedBrush}" FontSize="12" Margin="0,0,0,6" Visibility="Collapsed"/>
                             <TextBlock x:Name="SelectedNameText" Foreground="{StaticResource TextBrush}" FontSize="14" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Margin="0,0,0,4"/>
                             <TextBlock x:Name="SelectedPwdText" Foreground="{StaticResource BlueBrush}" FontSize="14" FontFamily="Consolas" TextWrapping="Wrap" Margin="0,0,0,8"/>
                             <StackPanel x:Name="SelectedActionsPanel" Orientation="Horizontal" Visibility="Collapsed">
