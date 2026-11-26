@@ -1,0 +1,18 @@
+﻿# .NET build & publish outputs
+bin/
+obj/
+publish/
+*.user
+*.suo
+.vs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sensitive local vault & settings
+passwords.enc
+passwords.md
+settings.json
+*.enc
