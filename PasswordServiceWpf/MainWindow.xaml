@@ -10,13 +10,17 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,14">
-            <TextBlock Text="Password Service" Foreground="{StaticResource TextBrush}" FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom"/>
-        </StackPanel>
+        <Grid Grid.Row="0" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Password Service" Foreground="{StaticResource TextBrush}" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock x:Name="FooterStatusText" Grid.Column="1" Text="" Foreground="{StaticResource MutedBrush}" FontSize="12" VerticalAlignment="Center" Visibility="Collapsed"/>
+        </Grid>
 
         <!-- Main 16:9 Two-Column Content (No Scrollbar) -->
         <Grid Grid.Row="1">
@@ -151,8 +155,5 @@
                 </Grid>
             </Border>
         </Grid>
-
-        <!-- Footer Status -->
-        <TextBlock x:Name="FooterStatusText" Grid.Row="2" Text="" Foreground="{StaticResource MutedBrush}" FontSize="12" Margin="0,8,0,0" Visibility="Collapsed"/>
     </Grid>
 </Window>

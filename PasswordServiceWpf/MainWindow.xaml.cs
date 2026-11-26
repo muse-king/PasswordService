@@ -426,7 +426,6 @@ public partial class MainWindow : Window
             if (!string.IsNullOrEmpty(dir))
             {
                 Process.Start(new ProcessStartInfo("explorer.exe", dir) { UseShellExecute = true });
-                SetFooterStatus("● 已打开所在文件夹", "MutedBrush");
             }
         }
         catch
