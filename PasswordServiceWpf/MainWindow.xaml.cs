@@ -43,6 +43,7 @@ public partial class MainWindow : Window
     {
         FooterStatusText.Text = text;
         FooterStatusText.Foreground = (Brush)FindResource(brushKey);
+        FooterStatusText.Visibility = string.IsNullOrEmpty(text) ? Visibility.Collapsed : Visibility.Visible;
     }
 
     private void CopyToClipboardWithAutoClear(string secret)
