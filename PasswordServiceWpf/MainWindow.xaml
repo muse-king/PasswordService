@@ -16,7 +16,6 @@
         <!-- Header -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,0,14">
             <TextBlock Text="Password Service" Foreground="{StaticResource TextBrush}" FontSize="20" FontWeight="Bold" VerticalAlignment="Bottom"/>
-            <TextBlock Text="LOCAL SECURITY TOOL" Foreground="{StaticResource BlueBrush}" FontSize="11" FontWeight="Bold" Margin="12,0,0,3" VerticalAlignment="Bottom"/>
         </StackPanel>
 
         <!-- Main 16:9 Two-Column Content (No Scrollbar) -->
@@ -96,8 +95,7 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <StackPanel Grid.Row="0" Margin="0,0,0,8">
-                            <TextBlock Text="加密密码库" Foreground="{StaticResource MutedBrush}" FontSize="11"/>
-                            <TextBlock x:Name="VaultPathText" Text="已加密连接 · passwords.enc" Foreground="{StaticResource TextBrush}" FontSize="12" Margin="0,2,0,0"/>
+                            <TextBlock x:Name="VaultPathText" Text="已加密连接" Foreground="{StaticResource MutedBrush}" FontSize="12"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
                             <Button Content="更改位置" Style="{StaticResource SecondaryButton}" Padding="10,5" FontSize="12" Margin="0,0,8,0" Click="ChangeLocation_Click"/>
